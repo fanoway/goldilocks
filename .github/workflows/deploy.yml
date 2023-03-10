@@ -10,7 +10,7 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  build:
+  build_and_deploy:
 
     runs-on: ubuntu-latest
 
@@ -24,12 +24,8 @@ jobs:
           command: build
           args: --release --all-features
           
-  docker:
-    runs-on: ubuntu-latest
-
-    steps:
-     - uses: actions/checkout@v2
-     - name: Build the Docker image
-       run: docker build . --file Dockerfile --tag goldilocks:$(date +%s)
+      - uses: actions/checkout@v2
+      - name: Build the Docker image
+        run: docker build . --file DOCKERFILE --tag goldilocks:$(date +%s)
     
   
