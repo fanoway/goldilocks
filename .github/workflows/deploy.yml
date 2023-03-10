@@ -21,7 +21,7 @@ jobs:
       - name: install tools
         run: cargo install trunk
       - name: build
-        run: trunk build --release
+        run: cd frontend && trunk build --release
 
     
   
