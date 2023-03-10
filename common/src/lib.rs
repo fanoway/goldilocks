@@ -1,8 +1,8 @@
 use yew::prelude::*;
 
-use serde::Deserialize;
+use serde::{Deserialize, Serialize};
 
-#[derive(Clone, PartialEq, Deserialize)]
+#[derive(Clone, PartialEq, Deserialize, Debug, Serialize)]
 pub struct Location {
     pub id: usize,
     pub lat: f64,

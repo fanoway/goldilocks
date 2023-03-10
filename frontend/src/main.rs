@@ -51,7 +51,7 @@ fn app() -> Html {
                 let locations = locations.clone();
                 wasm_bindgen_futures::spawn_local(async move {
                     // TODO change path to get back backend API
-                    let fetched_locations: Vec<Location> = Request::get(r"\locations_flat.json")
+                    let fetched_locations: Vec<Location> = Request::get(r"\api\v1\locations\all")
                         .send()
                         .await
                         .unwrap()
