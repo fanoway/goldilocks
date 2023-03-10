@@ -29,11 +29,11 @@ pub async fn main(req: Request, env: Env, _ctx: worker::Context) -> Result<Respo
     // functionality and a `RouteContext` which you can use to  and get route parameters and
     // Environment bindings like KV Stores, Durable Objects, Secrets, and Variables.
     router
-        .get("/", |_, _| Response::ok("Hello from Workers!"))
+        .get_async("/", |_, _| async move { handle_slash().await })
         .run(req, env)
         .await
 }
 
 async fn handle_slash() -> Result<Response> {
-    Ok(locations::read_json())
+    Response::ok(format!("{:?}", locations::read_json()))
 }
