@@ -15,7 +15,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Build the Docker image and deploy
-        run: docker build .
+      - uses: actions/checkout@v2
+      - name: Build
+        run: cargo build --verbose --release
+      - name: bundle
+        run: cargo install trunk
+        run: trunk build --release
+
     
   
