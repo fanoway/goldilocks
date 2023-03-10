@@ -1,11 +1,10 @@
-#[macro_use]
 use common::Location;
 use serde_json::de::from_reader;
 use std::fs::File;
 use std::io;
 use std::io::BufReader;
 
-fn read_json() -> Vec<Location> {
+pub fn read_json() -> Vec<Location> {
     // TODO error handling
     // TODO transition from lpocal file to KV worker
     let json_file_path: String =

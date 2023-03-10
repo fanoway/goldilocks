@@ -34,6 +34,6 @@ pub async fn main(req: Request, env: Env, _ctx: worker::Context) -> Result<Respo
         .await
 }
 
-async fn handle_slash() -> Result<Repsonse> {
-    OK(locations::read_json())
+async fn handle_slash() -> Result<Response> {
+    Ok(locations::read_json())
 }
