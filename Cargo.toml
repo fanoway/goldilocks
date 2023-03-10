@@ -4,3 +4,5 @@ members =[
 "backend",
 "frontend",
 "common"]
+
+default-members = ["backend"]

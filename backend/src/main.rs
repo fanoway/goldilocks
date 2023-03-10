@@ -1,8 +1,10 @@
 #[macro_use]
 extern crate rocket;
 use common::Location;
+use rocket::fs::NamedFile;
 use serde_json::de::from_reader;
 use std::fs::File;
+use std::io;
 use std::io::BufReader;
 
 fn read_json() -> Vec<Location> {
@@ -25,7 +27,14 @@ fn loc_all() -> String {
     j
 }
 
+#[get("/")]
+async fn index() -> io::Result<NamedFile> {
+    NamedFile::open("../frontend/dist/index.html").await
+}
+
 #[launch]
 fn rocket() -> _ {
-    rocket::build().mount("/api/v1/locations", routes![loc_all])
+    rocket::build()
+        .mount("/api/v1/locations", routes![loc_all])
+        .mount("/", routes![index])
 }
