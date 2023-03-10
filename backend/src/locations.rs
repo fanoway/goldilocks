@@ -1,7 +1,6 @@
 use common::Location;
 use serde_json::de::from_reader;
 use std::fs::File;
-use std::io;
 use std::io::BufReader;
 
 pub fn read_json() -> Vec<Location> {
