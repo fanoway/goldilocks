@@ -1,4 +1,4 @@
-name: Deplot
+name: Deploy
 
 on:
   push:
