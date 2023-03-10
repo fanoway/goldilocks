@@ -11,3 +11,4 @@ WORKDIR /backend
 COPY . .
 RUN cargo install --path .
 CMD ["backend"]
+EXPOSE 8000
