@@ -1,5 +1,4 @@
 #[macro_use]
-extern crate rocket;
 use common::Location;
 use serde_json::de::from_reader;
 use std::fs::File;
