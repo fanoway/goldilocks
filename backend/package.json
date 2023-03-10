@@ -1,14 +1,11 @@
 {
-  "name": "backend",
-  "version": "0.0.0",
-  "devDependencies": {
-    "@cloudflare/workers-types": "^4.20230307.0",
-    "typescript": "^4.9.5",
-    "wrangler": "2.12.2"
-  },
-  "private": true,
-  "scripts": {
-    "start": "wrangler dev",
-    "deploy": "wrangler publish"
-  }
+	"private": true,
+	"version": "0.0.0",
+	"scripts": {
+		"deploy": "wrangler publish",
+		"dev": "wrangler dev --local"
+	},
+	"devDependencies": {
+		"wrangler": "^2.0.0"
+	}
 }

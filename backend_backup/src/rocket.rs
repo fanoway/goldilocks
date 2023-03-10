@@ -27,14 +27,8 @@ fn loc_all() -> String {
     j
 }
 
-#[get("/")]
-async fn index() -> io::Result<NamedFile> {
-    NamedFile::open("../frontend/dist/index.html").await
-}
-
 #[launch]
 fn rocket() -> _ {
     rocket::build()
         .mount("/api/v1/locations", routes![loc_all])
-        .mount("/", routes![index])
 }
