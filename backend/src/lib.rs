@@ -1,6 +1,6 @@
 use serde_json::json;
 use worker::*;
-
+mod locations;
 mod utils;
 
 fn log_request(req: &Request) {
@@ -32,4 +32,8 @@ pub async fn main(req: Request, env: Env, _ctx: worker::Context) -> Result<Respo
         .get("/", |_, _| Response::ok("Hello from Workers!"))
         .run(req, env)
         .await
+}
+
+async fn handle_slash() -> Result<Repsonse> {
+    OK(locations::read_json())
 }
