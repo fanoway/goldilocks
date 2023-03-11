@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build
         run: cargo build --verbose --release
-      - name: instal wasm target
+      - name: install wasm target
         run: rustup target add wasm32-unknown-unknown
       - name: install tools (trunk)
         run: cargo install trunk 

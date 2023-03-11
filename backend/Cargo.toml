@@ -2,6 +2,7 @@
 name = "backend"
 version = "0.1.0"
 edition = "2021"
+description = "Backend service for goldilocks climbing weather app"
 
 [lib]
 crate-type = ["cdylib", "rlib"]
