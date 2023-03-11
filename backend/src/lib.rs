@@ -28,12 +28,14 @@ pub async fn main(req: Request, env: Env, _ctx: worker::Context) -> Result<Respo
     // Add as many routes as your Worker needs! Each route will get a `Request` for handling HTTP
     // functionality and a `RouteContext` which you can use to  and get route parameters and
     // Environment bindings like KV Stores, Durable Objects, Secrets, and Variables.
-    router
-        .get_async("/", |_, _| async move { handle_slash().await })
-        .run(req, env)
-        .await
+    //
+    // router
+    //     .get_async("/", |_, _| async move { handle_slash().await })
+    //     .run(req, env)
+    //     .await
+    router.get("/", |_, _| all_locs()).run(req, env).await
 }
 
-async fn handle_slash() -> Result<Response> {
+fn all_locs() -> Result<Response> {
     Response::ok(format!("{:?}", locations::read_json()))
 }

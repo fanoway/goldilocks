@@ -8,3 +8,8 @@ WORKERS_RS_VERSION = "0.0.11"
 [build]
 command = "cargo install -q worker-build --version 0.0.9 && worker-build "
 # command = "cargo install -q worker-build --version 0.0.7 && worker-build --release"
+
+[[ d1_databases ]]
+binding = "locations_db_bind"
+database_name = "locations_db"
+database_id = "ae75be34-07de-473d-9fe1-b8716d49075e"
