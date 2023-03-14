@@ -1,0 +1,15 @@
+[package]
+name = "functions"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# Documentation: https://docs.rs/vercel_runtime/latest/vercel_runtime
+vercel_runtime = { version = "0.2.1" }
+
+# Each handler has to be specified as [[bin]]
+[[bin]]
+name = "handler"
+path = "api/handler.rs"
