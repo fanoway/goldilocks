@@ -1,6 +1,3 @@
 [workspace]
-
-members =[
-"functions",
-]
-default-members = ["functions"]
+members = ['api']
+default-members = ['api']
